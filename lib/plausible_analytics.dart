@@ -1,6 +1,5 @@
 library plausible_analytics;
 
-import 'package:plausible_analytics/IPAddressGetter.dart';
 import 'package:universal_io/io.dart'; // instead of 'dart:io';
 import 'dart:convert';
 
@@ -46,12 +45,10 @@ class Plausible {
     // Http Post request see https://plausible.io/docs/events-api
     try {
       HttpClient client = HttpClient();
-      String deviceIP = await getHostIP();
       HttpClientRequest request =
           await client.postUrl(Uri.parse(serverUrl + '/api/event'));
       request.headers.set('User-Agent', userAgent);
       request.headers.set('Content-Type', 'application/json; charset=utf-8');
-      request.headers.set('X-Forwarded-For', deviceIP);
       Object body = {
         "domain": domain,
         "name": name,
