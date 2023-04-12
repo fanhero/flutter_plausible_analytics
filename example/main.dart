@@ -4,7 +4,8 @@ String analyticsUrl = "https://youranalyticsurl.com";
 const String analyticsName = "yourappname"; // this is actually the site name
 
 void main() {
-  Plausible plausible = Plausible(analyticsUrl, analyticsName);
+  Plausible plausible =
+      Plausible(analyticsUrl, analyticsName, screenWidth: 384);
   // Send goal
   plausible.event(name: 'Device', props: {
     'app_version': 'v1.0.0',
