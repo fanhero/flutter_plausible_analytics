@@ -6,7 +6,7 @@ const String domain = "example.com";
 const String name = "pageview";
 const String url = "app://localhost/test";
 const String referrer = "app://localhost/referrer";
-const String screenWidth = "1000x1000";
+const int screenWidth = 384;
 
 void main() {
   test('make plausible event call with pageview', () async {

@@ -9,12 +9,12 @@ class Plausible {
   String serverUrl;
   String userAgent;
   String domain;
-  String screenWidth;
+  int screenWidth;
   bool enabled = true;
 
   /// Constructor
   Plausible(this.serverUrl, this.domain,
-      {this.userAgent = "", this.screenWidth = ""});
+      {this.userAgent = "", required this.screenWidth});
 
   /// Post event to plausible
   Future<int> event(
